@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block body%}
+    <h1 class="text-center text-decoration-underline">Welcome <span class="font-italic">{{data.username}}</span> to Your Dashboard</h1><br><br>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-2 float-right">
+                <img src="{{data.ProfilePic.url}}" alt="error" style="width:150px;height:150px;border-radius:60px">
+            </div>
+            <div class="col-md-8">
+                <div class="col">
+                    <h4>User Type: {{data.utype}}</h4>
+                    {% if data.utype == 'Doctor'%}
+                    <h4>Full Name:Dr. {{data.first_name}} {{data.last_name}}</h4>
+                    {% else %}
+                    <h4>Full Name:{{data.first_name}} {{data.last_name}}</h4>
+                    {% endif %}
+                    <h4>Password: {{data.ConfirmPassword}}</h4>
+                    <h4>Email ID: {{data.email}}</h4>
+                    <h4>Address: {{data.Address}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

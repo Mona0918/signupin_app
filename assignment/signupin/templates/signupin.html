@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Home Page {% endblock %}
+{% block body %}
+<br><br><br><br><br><br><br>
+<h1 class="text-center font-weight-bold text-warning">Welcome to the SignUpIn Application</h1>
+<br><br>
+<div class="row text-center">
+        <div class="col-md-7">
+            <a class="nav-item nav-link font-weight-bold text-dark" href="{% url 'signupin:usertype' %}">SignUp</a>
+        </div>
+        <div class="col-md-2">   
+            <a class="nav-item nav-link font-weight-bold text-dark" href="{% url 'signupin:signin' %}">SignIn</a>
+        </div>
+</div>
+{% endblock %}

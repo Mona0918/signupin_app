@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Type of Users{% endblock %}
+{% block body%}
+<br><br>
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in usertype_form %}
+        <div class="container">
+            <div class="row">
+                <div class="card-body border-0 d-flex justify-content-center">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>{{field}}
+                        <label class="form-check-label" for="flexRadioDefault2">{{field.label_tag}}</label>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="col">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg">Enter</button>
+                </div>
+                <p class="text-center">If you already have an account, <a href="{% url 'signupin:signin' %}">login</a> instead.</p>
+            </div>
+        </div>
+        {% endfor %}
+        <br><br>
+    </form>
+{% endblock %}
